@@ -12,12 +12,6 @@ rm ./scripts/BuildTestContainersMacOS.sh
 cp ./src/test/java/com/example/demo/DemoApplicationTests.java ./src/test/java/com/example/demo/DemoApplicationTests.java_BACKUP
 sed -i '' -e '3,13d;16,47d' ./src/test/java/com/example/demo/DemoApplicationTests.java
 
-if [[ "$(docker images -q ryuk:0.3.0 2> /dev/null)" == "" ]]; then
-  docker pull testcontainers/ryuk:0.3.0
-else
-  echo "ryuk OK"
-fi
-
 
 echo "<Building first container in regular mode..>"
 
